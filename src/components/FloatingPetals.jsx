@@ -51,7 +51,6 @@ export function FloatingPetals({ count = 12 }) {
             fill="none"
             style={{
               transform: `rotate(${p.rotation}deg)`,
-              filter: 'drop-shadow(0 2px 4px rgba(64, 84, 64, 0.08))',
             }}
           >
             {/* Petal silhouette with soft highlight */}

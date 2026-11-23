@@ -179,7 +179,6 @@ export function Daisy({
               <path
                 d="M 0 0 C 7 -10, 16 -22, 10 -38 C 5 -46, -4 -44, -7 -36 C -12 -24, -6 -10, 0 0 Z"
                 fill={`url(#leafGrad-${id})`}
-                filter="drop-shadow(0 2px 3px rgba(40, 52, 35, 0.09))"
               />
               <path
                 d="M 0 -2 L 1 -33"
@@ -234,6 +233,7 @@ export function Daisy({
                     style={{
                       opacity: isBloomActive ? 1 : 0,
                       transformOrigin: '0 0',
+                      willChange: 'transform, opacity',
                       animation: isBloomActive
                         ? `petalScale 1.1s cubic-bezier(0.34, 1.45, 0.64, 1) ${totalDelay}s both`
                         : 'none',
@@ -243,11 +243,6 @@ export function Daisy({
                       d="M 0 0 C -4.2 -14, -6.8 -34, -3.2 -48 C -1 -54, 1 -54, 3.2 -48 C 6.8 -34, 4.2 -14, 0 0 Z"
                       fill={isFront ? `url(#petalGrad-${id})` : `url(#petalBackGrad-${id})`}
                       transform={`scale(${petal.widthScale}, ${petal.lengthScale})`}
-                      style={{
-                        filter: isFront
-                          ? 'drop-shadow(0 1px 3px rgba(69, 70, 63, 0.08))'
-                          : 'drop-shadow(0 2px 4px rgba(69, 70, 63, 0.12))',
-                      }}
                     />
                     <path
                       d="M 0 -8 L 0 -42"

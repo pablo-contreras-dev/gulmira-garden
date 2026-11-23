@@ -176,7 +176,7 @@ export function Bouquet({ isBloomActive = true }) {
     <div className="relative w-full max-w-[580px] mx-auto aspect-[700/780] select-none flex items-center justify-center">
       <svg
         viewBox="0 0 700 780"
-        className="w-full h-full overflow-visible filter drop-shadow-sm"
+        className="w-full h-full overflow-visible"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="Handcrafted botanical bouquet of blooming daisies for Gülmira"
         role="img"
@@ -230,7 +230,6 @@ export function Bouquet({ isBloomActive = true }) {
           <path
             d="M 330 682 C 342 678, 358 678, 370 682 C 372 686, 370 690, 368 693 C 356 690, 344 690, 332 693 Z"
             fill="url(#twineGrad)"
-            filter="drop-shadow(0 2px 3px rgba(64, 84, 64, 0.15))"
           />
           {/* Wrap loop 2 */}
           <path

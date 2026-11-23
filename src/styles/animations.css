@@ -258,6 +258,18 @@
   animation: swayStem3 7.4s ease-in-out infinite;
 }
 
+/* Hardware Acceleration for Ultra Smooth Mobile GPU Rendering */
+.daisy-entity,
+.breathe-head-1,
+.breathe-head-2,
+.breathe-head-3,
+.animate-drift,
+.tap-active-pulse {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
 /* Autonomous flower breathing classes */
 .breathe-head-1 {
   transform-origin: center center;
