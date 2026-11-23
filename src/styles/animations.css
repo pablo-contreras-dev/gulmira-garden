@@ -1,0 +1,325 @@
+/* =========================================================================
+   MIRA — A LITTLE DIGITAL GARDEN
+   Botanical Organic CSS Animations
+   ========================================================================= */
+
+/* 1. Stem Growth animation via stroke-dashoffset */
+@keyframes stemGrow {
+  0% {
+    stroke-dashoffset: 800;
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* 2. Leaf Unfurl Animation - scales gracefully from parent coordinate */
+@keyframes leafScale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 3. Daisy Petal Blooming Animation */
+@keyframes petalScale {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08, 1.04);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 4. Flower Center (Disc) Reveal Animation */
+@keyframes centerBloom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  75% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 5. Gentle Breeze Sway on Stems (Stem base anchor) */
+@keyframes swayStem1 {
+  0%, 100% { transform: rotate(0deg); }
+  35% { transform: rotate(1.4deg); }
+  70% { transform: rotate(-0.9deg); }
+}
+
+@keyframes swayStem2 {
+  0%, 100% { transform: rotate(0deg); }
+  40% { transform: rotate(-1.5deg); }
+  80% { transform: rotate(1.1deg); }
+}
+
+@keyframes swayStem3 {
+  0%, 100% { transform: rotate(0deg); }
+  45% { transform: rotate(1.8deg); }
+  85% { transform: rotate(-1.2deg); }
+}
+
+/* 6. Autonomous Flower Head Breathing & Flutter (For Mobile & Desktop) */
+@keyframes headBreathe1 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.04) rotate(1.8deg);
+  }
+}
+
+@keyframes headBreathe2 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.03) rotate(-2deg);
+  }
+}
+
+@keyframes headBreathe3 {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(1.4deg);
+  }
+}
+
+/* 7. Tap / Click Blossom Pulse Reaction */
+@keyframes flowerTapPulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.16) rotate(3deg);
+  }
+  70% {
+    transform: scale(0.96) rotate(-1.5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* 8. Tap Sparkle Burst */
+@keyframes tapSparkleBurst {
+  0% {
+    transform: scale(0.3);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* 9. Floating Petal Drift */
+@keyframes floatingPetal {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translate3d(28px, 160px, 0) rotate(160deg);
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-18px, 320px, 0) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+/* 10. Soft Fade & Up Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 11. Scale In */
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 12. Gentle Downward Bouncing Indicator */
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* 13. Subtle Button Glow Pulse */
+@keyframes buttonPulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 14px -2px rgba(64, 84, 64, 0.25), 0 0 0 0 rgba(101, 119, 91, 0.25);
+  }
+  50% {
+    box-shadow: 0 6px 20px -2px rgba(64, 84, 64, 0.35), 0 0 0 8px rgba(101, 119, 91, 0.12);
+  }
+}
+
+/* 14. Audio Wave Equalizer Bars */
+@keyframes audioWave1 {
+  0%, 100% { height: 4px; }
+  50% { height: 14px; }
+}
+@keyframes audioWave2 {
+  0%, 100% { height: 14px; }
+  50% { height: 6px; }
+}
+@keyframes audioWave3 {
+  0%, 100% { height: 8px; }
+  50% { height: 16px; }
+}
+
+/* Utility classes */
+.animate-stem {
+  animation: stemGrow 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-leaf-scale {
+  transform-origin: 0 0;
+  animation: leafScale 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-petal-scale {
+  transform-origin: 0 0;
+  animation: petalScale 1.1s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+}
+
+.animate-center {
+  transform-origin: center center;
+  animation: centerBloom 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.sway-1 {
+  transform-origin: 350px 720px;
+  animation: swayStem1 6.8s ease-in-out infinite;
+}
+
+.sway-2 {
+  transform-origin: 350px 720px;
+  animation: swayStem2 8.2s ease-in-out infinite;
+}
+
+.sway-3 {
+  transform-origin: 350px 720px;
+  animation: swayStem3 7.4s ease-in-out infinite;
+}
+
+/* Autonomous flower breathing classes */
+.breathe-head-1 {
+  transform-origin: center center;
+  animation: headBreathe1 5.4s ease-in-out infinite;
+}
+
+.breathe-head-2 {
+  transform-origin: center center;
+  animation: headBreathe2 6.8s ease-in-out infinite;
+}
+
+.breathe-head-3 {
+  transform-origin: center center;
+  animation: headBreathe3 5.9s ease-in-out infinite;
+}
+
+.tap-active-pulse {
+  animation: flowerTapPulse 0.65s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.tap-sparkle-ring {
+  animation: tapSparkleBurst 0.75s ease-out forwards;
+}
+
+.animate-drift {
+  animation: floatingPetal var(--drift-duration, 14s) ease-in-out infinite;
+  animation-delay: var(--drift-delay, 0s);
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bounce-subtle {
+  animation: gentleBounce 2.2s ease-in-out infinite;
+}
+
+.animate-button-glow {
+  animation: buttonPulseGlow 3s infinite ease-in-out;
+}
+
+.bar-1 { animation: audioWave1 0.8s infinite ease-in-out; }
+.bar-2 { animation: audioWave2 0.9s infinite ease-in-out; }
+.bar-3 { animation: audioWave3 0.7s infinite ease-in-out; }
+
+/* Desktop hover enhancements */
+@media (hover: hover) and (pointer: fine) {
+  .daisy-head-interactive:hover {
+    filter: drop-shadow(0 4px 10px rgba(101, 119, 91, 0.25));
+    transform: scale(1.08) rotate(2deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease-out;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
